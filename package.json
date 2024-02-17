@@ -1,0 +1,16 @@
+{
+  "name": "workout-planner",
+  "version": "1.0.0",
+  "description": "This is a Full-Stack Apllication for managing and planning workouts. It allows users to create, view, edit, and delete exercises and routines. The applications backend is built using Node.js, Express.js, MongoDB. The applications frontend is built using HTML, CSS, and JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.1.3"
+  }
+}
