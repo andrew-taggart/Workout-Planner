@@ -3,11 +3,10 @@ const Exercise = require('./exercise')
 
 const Workout = new Schema(
     {
-        title : {type: String, required: true},
+        user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+        name : {type: String, required: true},
         description : {type: String, required: true},
-        description : {type: String, required: true},
-        exercises: [{type: Schema.Types.ObjectId, ref:'Exercise'}],
-        createdBy: { type: Schema.Types.ObjectId, ref: 'User'}
+        exercises: [{type: String, ref: ['cardio', 'strength', 'mobility'], required: true }],
     },
     { timestamps: true }
 )

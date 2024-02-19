@@ -1,5 +1,5 @@
 const exerciseForm = document.querySelector('#exerciseForm')
-
+//Create and input Axios key for larger library
 exerciseForm.addEventListener('submit', async function(event) {
     event.preventdefault
     const exerciseData = {
@@ -25,5 +25,4 @@ exerciseForm.addEventListener('submit', async function(event) {
 } catch (error) {
     console.error('Error creating exercise', error)
 }
-
 })
