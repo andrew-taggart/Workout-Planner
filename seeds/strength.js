@@ -6,19 +6,25 @@ const main = async () =>
 
     StrengthExercises = [
     { 
-    user: '',
     name: 'Bench Press',
-    description: 'add specificaitions in. DB, Barbell, etc',
-    sets: 4,
+    type: 'Chest',
+    notes: 'pick thing up, put thing down',
+    sets: 3,
     reps: 10,
-    weight: 100},
+    weight: 225,
+    weightUnit: 'lbs',
+    rest: 90,
+    timeUnit: 'seconds'},
     {
-    user: '',
     name: 'Back Squat',
-    description: 'pick thing up, put thing down',
+    type: 'legs',
+    notes: 'pick thing up, put thing down',
     sets: 4,
     reps: 10,
-    weight: 200}, //multiple? string and number??
+    weight: 300, //multiple? string and number??
+    weightUnit: 'lbs',
+    rest: 120,
+    timeUnit: 'seconds'}
 ]
 
 await Strength.insertMany(strengthExercises)

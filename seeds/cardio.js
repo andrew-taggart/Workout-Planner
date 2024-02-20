@@ -5,22 +5,31 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => 
 
     cardioExercises = [
+
     { 
-    user: '',
-    name: 'Run',
-    description: 'long',
-    sets: 1,
-    time: 30,
-    distance: 5,
-    speed: 0, },
+    name: '8 mile',
+    type: 'distance',
+    notes : 'slower pace',
+    reps: 1,
+    time: 0,
+    pace: 8,
+    paceUnit: 'min/mile',
+    distance: 8,
+    distanceUnit: 'miles',
+    rest: 0 ,
+    timeUnit: 'seconds'},
     {
-    user: '',
-    name: 'Sprint',
-    description: 'short',
-    sets: 4,
-    time: 60, //change to string???
-    distance: 400,  //include units
-    speed: 70, }, //change to string?
+    name: '4x400',
+    type: 'sprint', //change to enum??
+    notes : '',
+    reps: 4,
+    time: 0,
+    pace: 8,
+    paceUnit: 'min/mile',
+    distance: 400,
+    distanceUnit: 'meters',
+    rest: 120,
+    timeUnit: 'seconds'},
 ]
 
 await Cardio.insertMany(cardioExercises)

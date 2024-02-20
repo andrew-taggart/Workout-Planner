@@ -6,17 +6,21 @@ const main = async () =>
 
     mobilityExercises = [
     { 
-    user: '',
     name: 'Cobra',
-    description: 'hips down chest up',//vid link?
-    sets: 1,
-    time: 30,},
+    type: 'yoga',
+    notes: 'push hips towards ground, chest up', //include video??
+    reps: 1,
+    time: 30,
+    rest: 0,
+    timeUnit: 'seconds'},
     {
-    user: '',
-    name: 'cat cow',
-    description: 'arc back down and curve up',
-    sets: 10,
-    time: 5, } //change to string??? 
+    name: 'Cat Cow',
+    type: 'yoga',
+    notes: 'push hips towards ground, chest up', //include video??
+    reps: 10,
+    time: 5,  //change to string??? 
+    rest: 0,
+    timeUnit: 'seconds'}
 ]
 
 await Mobility.insertMany(mobilityExercises)
