@@ -14,7 +14,7 @@ const main = async () =>
 },
     {
     username: 'test1',
-    type: 'client',
+    type: 'user',
     email: 'taggart5369@gmail.com',
     password: 'fh89qpweqh@#&(*!',
     name: 'Test Account'
