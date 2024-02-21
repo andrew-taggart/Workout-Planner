@@ -1,28 +1,26 @@
-const exerciseForm = document.querySelector('#exerciseForm')
-//Create and input Axios key for larger library
-exerciseForm.addEventListener('submit', async function(event) {
-    event.preventdefault
-    const exerciseData = {
-        name: document.querySelector('#name').value,
-        sets: document.querySelector('#sets').value,
-        reps: document.querySelector('#reps').value,
-        weight: document.querySelector('#weight').value,
-        notes: document.querySelector('#notes').value,
+const userForm = document.querySelector('#userForm')
+const userName = document.querySelector('#username')
+const password = document.querySelector('#password')
+const enterName = document.querySelector('#name')
+const email = document.querySelector('#email')
+
+userForm.addEventListener('submit', function(event) {
+    event.preventDefault()
+    const userData = {
+        username: userName.value,
+        password: password.value,
+        name: enterName.value,
+        email: email.value,
     }
 
-    try { const response = await fetch('./exercises', {
+    fetch('http://localhost:3001/users/signUp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(exerciseData)
+        body: JSON.stringify(userData)
     })
-    if (!response.ok) {
-        throw new Error('Failed to crate exercise')
-    }
-    const newExercise = await response.json()
-    console.log('New Excercise:', newExercise)
-} catch (error) {
-    console.error('Error creating exercise', error)
-}
+    .then(response => response.json)
+    .then(data => console.log('User Created', data))
+    .catch((error) => console.error('Error:', error))
 })
