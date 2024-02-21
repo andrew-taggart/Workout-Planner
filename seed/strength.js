@@ -2,9 +2,9 @@ const db = require('../db')
 const { Strength } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const main = async () =>
+const main = async () => {
 
-    StrengthExercises = [
+   const strengthExercises = [
         {
             name: 'Bench Press',
             type: 'Chest',
@@ -65,7 +65,7 @@ const main = async () =>
             type: "Back",
             notes: "Grip bar, pull body up until chin clears the bar",
             sets: 3,
-            reps: "AMRAP", // As Many Reps As Possible
+            reps: 10, // As Many Reps As Possible
             weight: 0,
             weightUnit: "",
             rest: 90,
@@ -76,7 +76,7 @@ const main = async () =>
             type: "Chest",
             notes: "Body straight, lower until chest nearly touches the ground",
             sets: 3,
-            reps: "AMRAP",
+            reps: 10,
             weight: 0,
             weightUnit: "",
             rest: 60,
@@ -162,7 +162,7 @@ const main = async () =>
     ]
 
 await Strength.insertMany(strengthExercises)
-
+}
 const run = async () => {
     await main()
     db.close()

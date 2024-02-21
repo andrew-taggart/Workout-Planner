@@ -3,7 +3,7 @@ const { User } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-    const accounts = [
+    const userAccounts = [
         {
             username: 'adminTaggart',
             type: 'admin',
@@ -19,7 +19,7 @@ const main = async () => {
             name: 'Test Account'
         }
     ]
-    await User.insertMany(accounts)
+    await User.insertMany(userAccounts)
     console.log('Created User accounts')
 }
 const run = async () => {

@@ -2,9 +2,9 @@ const db = require('../db')
 const { Mobility } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const main = async () =>
+const main = async () => {
 
-    mobilityExercises = [
+   const mobilityExercises = [
         {
             name: 'Cobra',
             type: 'yoga',
@@ -125,7 +125,7 @@ const main = async () =>
     ]
 
 await Mobility.insertMany(mobilityExercises)
-
+}
 
 const run = async () => {
     await main()

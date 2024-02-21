@@ -6,10 +6,10 @@ const Strength = new Schema(
         type: {type: String, required: true},
         sets: {type: Number, required: true},
         reps: {type: Number, required: true},
-        weight: {type: Number, required: true},
-        weightUnit: {type: String, enum: ['lbs', 'kg'], required: true},
+        weight: {type: Number, },
+        weightUnit: {type: String, enum: ['lbs', 'kg', '']},
     },
     { timestamps: true }
 )
 
-module.exports = ('strength', Strength)
+module.exports = Strength

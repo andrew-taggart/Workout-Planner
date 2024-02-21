@@ -2,9 +2,9 @@ const db = require('../db')
 const { Cardio } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const main = async () =>
+const main = async () => {
 
-    cardioExercises = [
+    const cardioExercises = [
 
         {
             name: '8 Mile Run',
@@ -132,7 +132,7 @@ const main = async () =>
             pace: 0,
             paceUnit: '',
             distance: 0,
-            distanceUnit: '0',
+            distanceUnit: '',
             rest: 90,
             timeUnit: 'seconds'
         },
@@ -191,8 +191,7 @@ const main = async () =>
     ]
 
 await Cardio.insertMany(cardioExercises)
-await Cardio.deleteMany({})
-await Cardio.updateeMany({})
+}
 
 const run = async () => {
     await main()

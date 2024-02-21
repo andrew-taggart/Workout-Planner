@@ -10,4 +10,4 @@ const Mobility = new Schema(
     { timestamps: true }
 )
 
-module.exports = ('mobility', Mobility)
+module.exports =  Mobility
