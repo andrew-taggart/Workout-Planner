@@ -162,8 +162,6 @@ const main = async () =>
     ]
 
 await Strength.insertMany(strengthExercises)
-await Strength.deleteMany({})
-await Strength.updateeMany({})
 
 const run = async () => {
     await main()

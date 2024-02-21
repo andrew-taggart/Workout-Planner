@@ -1,6 +1,6 @@
 const { Workout } = require('../models')
 
-const getAllWorkouts = async (req, res) => {
+exports.getAllWorkouts = async (req, res) => {
     try {
         const workout = await Workout.find()
         res.json(workout)
@@ -9,7 +9,7 @@ const getAllWorkouts = async (req, res) => {
     }
 }
 
-const getWorkoutById = async (req, res) => {
+exports.getWorkoutById = async (req, res) => {
     try {
         const { id } = req.params
         const workout = await Workout.findById(id)
@@ -22,7 +22,7 @@ const getWorkoutById = async (req, res) => {
     }
 }
 
-const createWorkout = async (req, res) => {
+exports.createWorkout = async (req, res) => {
     try {
         const workout = await new Workout(req.body)
         await workout.save()
@@ -34,7 +34,7 @@ const createWorkout = async (req, res) => {
     }
 }
 
-const updateWorkout = async (req, res) => {
+exports.updateWorkout = async (req, res) => {
     try {
         let { id } = req.params;
         let workout = await Workout.findByIdAndUpdate(id, req.body, { new: true })
@@ -47,7 +47,7 @@ const updateWorkout = async (req, res) => {
     }
 }
 
-const deleteWorkout = async (req, res) => {
+exports.deleteWorkout = async (req, res) => {
     try {
         const { id } = req.params;
         const deleted = await TV.findByIdAndDelete(id)

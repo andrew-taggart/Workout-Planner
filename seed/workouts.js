@@ -2,11 +2,11 @@ const db = require('../db')
 const { Workout } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const main = async () =>
-
-    collections = [
+const main = async () => {
+    const adminTag = await User.find({ type: 'admin' })
+    workCollection = [
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Cardio Blast',
             description: 'High-intensity cardio session',
             exercises: [
@@ -20,7 +20,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Leg Day Strength',
             description: 'Focus on lower body strength',
             exercises: [
@@ -34,7 +34,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Full Body Mobility',
             description: 'Enhance overall flexibility',
             exercises: [
@@ -48,7 +48,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Cardio Intensity',
             description: 'High-intensity cardio session',
             exercises: [
@@ -62,7 +62,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Strength Powerlifting',
             description: 'Focused on powerlifting fundamentals',
             exercises: [
@@ -77,7 +77,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Mobility Yoga Flow',
             description: 'Yoga sequence for flexibility and recovery',
             exercises: [
@@ -92,7 +92,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Mixed Circuit Training',
             description: 'Combination of strength, cardio, and mobility',
             exercises: [
@@ -107,7 +107,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Bodyweight Mastery',
             description: 'Focus on bodyweight exercises for strength and agility',
             exercises: [
@@ -122,7 +122,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Agility and Speed',
             description: 'Quick movements and sprints to improve agility and speed',
             exercises: [
@@ -136,7 +136,7 @@ const main = async () =>
             ]
         },
         {
-            user: '',
+            user_id: adminTag[0]._id,
             name: 'Core Stability',
             description: 'Exercises focused on strengthening the core muscles',
             exercises: [
@@ -151,13 +151,11 @@ const main = async () =>
                 { name: "Child's Pose", type: "Cooldown", notes: "Sit back on heels, stretch arms forward", sets: 1, reps: 5, weight: 0, weightUnit: "", rest: 0, timeUnit: "minutes" }
             ]
         },
-
     ]
+    await Workout.insertMany(workCollections)
+    console.log('Created Workouts')
 
-await Workout.insertMany(collections)
-await Workout.deleteMany({})
-await Workout.updateeMany({})
-
+}
 const run = async () => {
     await main()
     db.close()

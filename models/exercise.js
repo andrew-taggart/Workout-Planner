@@ -14,4 +14,4 @@ const Exercise = new Schema(
     { timestamps: true }
 )
 
-module.exports = ('exercise', Exercise)
+module.exports = Exercise

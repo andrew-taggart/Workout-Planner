@@ -12,4 +12,4 @@ const Strength = new Schema(
     { timestamps: true }
 )
 
-module.exports = Workout.discriminator('strength', Strength)
+module.exports = ('strength', Strength)

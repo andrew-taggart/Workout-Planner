@@ -125,8 +125,7 @@ const main = async () =>
     ]
 
 await Mobility.insertMany(mobilityExercises)
-await Mobility.deleteMany({})
-await Mobility.updateeMany({})
+
 
 const run = async () => {
     await main()

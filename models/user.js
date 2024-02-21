@@ -11,4 +11,4 @@ const User = new Schema(
     { timestamps: true }
 )
 
-module.exports = ('user', User)
+module.exports = User

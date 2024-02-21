@@ -10,4 +10,4 @@ const Mobility = new Schema(
     { timestamps: true }
 )
 
-module.exports = Workout.discriminator('mobility', Mobility)
+module.exports = ('mobility', Mobility)

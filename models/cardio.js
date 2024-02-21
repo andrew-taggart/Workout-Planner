@@ -16,4 +16,4 @@ const Cardio = new Schema(
     { timestamps: true }
 )
 
-module.exports = Workout.discriminator('cardio', Cardio)
+module.exports = Cardio

@@ -7,12 +7,12 @@ const mobilitySchema = require('./mobility')
 const exerciseSchema = require('./exercise')
 
 
-const User = mongoose.model('user', userSchema)
-const Workout = mongoose.model('workout', workoutSchema)
-const Cardio = mongoose.model('cardio', cardioSchema)
-const Strength = mongoose.model('strength', strengthSchema)
-const Mobility = mongoose.model('mobility', mobilitySchema)
-const Exercise = mongoose.model('mobility', exerciseSchema)
+const User = mongoose.model('User', userSchema)
+const Workout = mongoose.model('Workout', workoutSchema)
+const Cardio = mongoose.model('Cardio', cardioSchema)
+const Strength = mongoose.model('Strength', strengthSchema)
+const Mobility = mongoose.model('Mobility', mobilitySchema)
+const Exercise = mongoose.model('Exercise', exerciseSchema)
 
 
 module.exports = {
