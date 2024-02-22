@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="signUp.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="signUp.js"></script>
     <title>Create Account</title>
 </head>
+
 <body>
-    <h2>Create Account</h2>
-    <form id="userForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="First Last" required><br>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Username" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Password"><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="email@example.com" required><br>
-        <button type="submit">Create Account</button>
-    </form>
-    <div id="users"> 
+    <div id="signUp">
+        <h2>Create Account</h2>
+        <form id="signUpForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="First Last" required><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required><br>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+    <div id="signIn">
+        <h2>Sign In</h2>
+        <form id="signInForm">
+            <input type="text" name="username" placeholder="username" required>
+            <input type="password" name="password" placeholder="password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <script src="signUp.js"></script>
     </div>
 </body>
+
 </html>
