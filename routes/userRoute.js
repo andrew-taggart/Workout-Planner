@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const workoutController = require('./controllers/userController')
+const userController = require('../controllers/userController')
 
 router.get('/', (req, res) => res.send('Landing Page. Setup html'))
 //Get Users
@@ -13,4 +13,4 @@ router.put('/users/:id', userController.updateUser)
 //delete User
 router.delete('/users/:id', userController.deleteUser)
 
-module.exports = workoutRouter
+module.exports = router

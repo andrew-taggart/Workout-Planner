@@ -1,5 +1,4 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
 const cors = require('cors')
@@ -8,7 +7,10 @@ const db = require('./db')
 
 //import Routes
 const workoutRoutes = require('./routes/workoutRoute')
-const userController = require('./controllers/userController')
+const usersRoutes = require('./routes/userRoute')
+const cardioRoutes = require('./routes/cardioRoute')
+const mobilityRoutes = require('./routes/mobilityRoute')
+const strengthRoutes = require('./routes/strengthRoutes')
 
 const app = express()
 app.use(cors())
@@ -18,11 +20,16 @@ const PORT = process.env.PORT || 3001
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-mongoose.connect('//127.0.0.1:27017/fitnessDatabase', { userNewUrlParser: true, useUnifiedTopology: true })
-
-app.use(express.json())
+// link Routes
 app.use('/api/workouts', workoutRoutes)
+app.use('/api/users', usersRoutes)
+app.use('/api/cardios', cardioRoutes)
+app.use('/api/mobilitys', mobilityRoutes)
+app.use('/api/strengths', strengthRoutes)
+
+app.use((err, req, res, next) => {
+    console.error(err.stack)
+    res.status(500).send('Something Broke!')
+})
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
-
-module.exports = app
